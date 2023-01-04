@@ -143,7 +143,7 @@ app.put('/api/v1/pierres/:id', (req,res) => {
           message:'pierre not found',
       });
   }
-  //creer fonction updateAvionById
+  
 })
 
 
