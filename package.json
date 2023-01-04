@@ -1,0 +1,22 @@
+{
+  "name": "api-pierre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/nodemon --exec babel-node server.js"
+  },
+  "author": "Pascal",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

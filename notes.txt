@@ -1,0 +1,68 @@
+
+creation workspace
+creation d'un serveur API en nodejs
+
+creation fichier server.js(touch server.js)
+
+initialisation du projet: npm init(yes to all)
+
+installation EXPRESS:
+Librairie NODE JS pour faire du HTTP
+npm install express --save
+
+installation BABEL + config
+npm install @babel/node --save - 
+npm install @babel/core --save
+npm install @babel/preset-env --save
+touch .babelrc
+{"presets": ["@babel/preset-env"]}
+
+mkdir data
+cd data
+touch database.js
+
+Création d'un constante pierres []
+
+Creation d'un ENDPOINT (app.get app.listen)
+https://expressjs.com/fr/guide/routing.html
+
+on code API CRUD
+premiere chose dans server.js
+
+import express from 'express';
+
+pour demarer le projet: node server.js
+error node ne connait pas import express ...
+
+la commande est : node_modules/.bin/babel-node server.js
+
+NODEMON
+npm install nodemon --save-dev
+
+Combinaison d'une commande incluant 
+Nodemon + babel + node dans un script de demarrage
+
+le fameux npm start
+node_modules/.bin/nodemon --exec babel-node server.js
+
+POSTMAN
+    new collection : API-pierres
+
+
+    expressjs/body-parser : npm install body-parser
+    import bodyParser from 'body-parser';
+
+    MODIFICATION DE LA PRESENTATION
+    rename le post avec OLD / MODULE-8b
+
+    creation du repertoire business pour differencier avec le fichier server.js qui correspond au code API
+    dans business creation du fichier PierresService.js
+
+
+    creer endpoint avec PATH PARAM /api/v1/pierres/:id
+
+
+    pb requete dans postman en get http://localhost:3000/api/v1/pierres/3
+    resultat : pierre not found alors que id ===3 exist
+
+
