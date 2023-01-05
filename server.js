@@ -104,9 +104,10 @@ app.get('/api/v1/pierres/:id', (req, res) => {
 //delete
 
 app.delete('/api/v1/pierres/:id',(req,res)=>{
+  console.log('reqdelete',req.params.id)
 const id = parseInt(req.params.id, 10);
 const pierre =deletePierreById(id)
-if (pierre) {
+if (!pierre) {
   res.status(200).send({
     success: true,
     message: 'pierre supprimé avec succés',

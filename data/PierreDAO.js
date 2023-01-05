@@ -5,6 +5,7 @@ import db from '../data/database';
  * @param {*} pierre 
  */
 export const insert  =function(pierre){
+    pierre.id = db.length +1
     db.push(pierre);
 }
 
@@ -61,7 +62,6 @@ export const del = function(id) {
         if (pierre.id === id) {
             db.splice(index, 1)
             return true;
-
 
         }
 

@@ -1,4 +1,4 @@
-import db from '../data/database';
+//import db from '../data/database';
 import {insert, update, del, getAll, get} from '../data/PierreDAO';
 
 /**
@@ -85,24 +85,25 @@ export const validate = function (pierre) {
  * @returns 
  */
 export const createPierre = function (pierre) {
-    // const pierreToSave = {
-    //     "id": db.length + 1,
-    //     "category": pierre.category,
-    //     "name": pierre.name,
-    //     "composition": pierre.composition,
-    //     "density": pierre.density,
-    //     "hardness": pierre.hardness,
-    //     "chakra": pierre.chakra,
-    //     "system_cristalin": pierre.system_cristalin,
-    //     "origin": pierre.origin,
-    //     "scarcity": pierre.scarcity,
-    //     "property": pierre.property,
-    //     "purification": pierre.purification,
+    const pierreToSave = {
+        "id":"",
+        //"id": db.length + 1,
+        "category": pierre.category,
+        "name": pierre.name,
+        "composition": pierre.composition,
+        "density": pierre.density,
+        "hardness": pierre.hardness,
+        "chakra": pierre.chakra,
+        "system_cristalin": pierre.system_cristalin,
+        "origin": pierre.origin,
+        "scarcity": pierre.scarcity,
+        "property": pierre.property,
+        "purification": pierre.purification,
 
-    // }
+    }
     //db.push(pierreToSave);
-    insert(pierre)
-    return pierre;
+    insert(pierreToSave)
+    return pierreToSave;
 }
 /**
  * function qui trouve une pierre
@@ -112,14 +113,15 @@ export const createPierre = function (pierre) {
 
 export const findPierreById = function (id) {
 
-    const pierreFound = db.find((pierre) => {
+    /*const pierreFound = db.find((pierre) => {
         if (pierre.id === id) {
 
             return pierre;
         }
 
     })
-    return pierreFound;
+    return pierreFound;*/
+    return get(id);
 }
 /**
  * function qui met a jour en bdd 
@@ -135,7 +137,7 @@ export const findPierreById = function (id) {
  */
 
 export const deletePierreById = function (id) {
-    const pierreFound = db.find((pierre, index) => {
+    /*const pierreFound = db.find((pierre, index) => {
         if (pierre.id === id) {
             db.splice(index, 1)
             return true;
@@ -144,7 +146,8 @@ export const deletePierreById = function (id) {
         }
 
     })
-    return pierreFound;
+    return pierreFound;*/
+    del(id);
 }
 /**
  * methode update
@@ -157,10 +160,10 @@ export const updatedPierreById = function(id, newPierre) {
     if (!validate(newPierre).success){
         return false;
     }
-    // newAvion.id = id;
-    // return update(newAvion);
+     newPierre.id = id;
+     return update(newPierre);
     
-    let pierreFound;
+    /*let pierreFound;
     let itemIndex;
 
     db.map((pierre,index) => {
@@ -196,6 +199,6 @@ export const updatedPierreById = function(id, newPierre) {
     ;
     //Mise a jour en bdd
     db.splice(itemIndex, 1,updatedPierre)
-    return updatedPierre;
+    return updatedPierre;*/
     
 }
