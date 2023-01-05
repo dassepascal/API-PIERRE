@@ -66,3 +66,9 @@ POSTMAN
     resultat : pierre not found alors que id ===3 exist
 
 
+creation PierreDAO
+
+getAll ok
+get ok
+del(id) message faux met del ok
+update(ok)
