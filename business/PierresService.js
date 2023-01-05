@@ -1,4 +1,6 @@
 import db from '../data/database';
+import {insert, update, del, getAll, get} from '../data/PierreDAO';
+
 /**
  * 
  * @param {*} pierre 
@@ -83,23 +85,24 @@ export const validate = function (pierre) {
  * @returns 
  */
 export const createPierre = function (pierre) {
-    const pierreToSave = {
-        "id": db.length + 1,
-        "category": pierre.category,
-        "name": pierre.name,
-        "composition": pierre.composition,
-        "density": pierre.density,
-        "hardness": pierre.hardness,
-        "chakra": pierre.chakra,
-        "system_cristalin": pierre.system_cristalin,
-        "origin": pierre.origin,
-        "scarcity": pierre.scarcity,
-        "property": pierre.property,
-        "purification": pierre.purification,
+    // const pierreToSave = {
+    //     "id": db.length + 1,
+    //     "category": pierre.category,
+    //     "name": pierre.name,
+    //     "composition": pierre.composition,
+    //     "density": pierre.density,
+    //     "hardness": pierre.hardness,
+    //     "chakra": pierre.chakra,
+    //     "system_cristalin": pierre.system_cristalin,
+    //     "origin": pierre.origin,
+    //     "scarcity": pierre.scarcity,
+    //     "property": pierre.property,
+    //     "purification": pierre.purification,
 
-    }
-    db.push(pierreToSave);
-    return pierreToSave;
+    // }
+    //db.push(pierreToSave);
+    insert(pierre)
+    return pierre;
 }
 /**
  * function qui trouve une pierre
